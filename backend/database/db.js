@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const MONGODB_URL = process.env.MONGODB_LINK
+const MONGODB_URL = "mongodb://localhost:27017/sahilEMP"
 
 const connectDb = async () => {
     try {

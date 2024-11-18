@@ -15,7 +15,7 @@ const ApproveLeave = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("https://employee-management-system-ujnj.onrender.com/api/leaves/applied-leave/");
+        const response = await axios.get("http://localhost:3000/api/leaves/applied-leave/");
         setUser(response.data.user);
         setUpdateLeave(false);
         setLoading(false);
@@ -30,7 +30,7 @@ const ApproveLeave = () => {
 
   const leaveApproval = async (permission, leaveId) => {
     try {
-      await axios.patch(`https://employee-management-system-ujnj.onrender.com/api/leaves/approve-leave/${leaveId}`, {
+      await axios.patch(`http://localhost:3000/api/leaves/approve-leave/${leaveId}`, {
         applyForLeave: permission,
       });
       setUpdateLeave(true);

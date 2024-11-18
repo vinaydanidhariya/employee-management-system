@@ -44,7 +44,7 @@ const LoginUser = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("https://employee-management-system-ujnj.onrender.com/api/superuser/login", {
+      const response = await axios.post("http://localhost:3000/api/superuser/login", {
         email: data.email,
         password: data.password,
       });

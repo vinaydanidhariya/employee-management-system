@@ -9,10 +9,16 @@ module.exports = async (req, res, next) => {
     if (!token) {
       throw new Error("Authentication failed!");
     }
-    const decodedToken = jwt.verify(token, "secret_secret");
-    const auth_user = (req.userData = { userId: decodedToken.userId });
+    // console.log(token);
+    
+    // const decodedToken = jwt.verify(token, "secret_secret");
+    // console.log(decodedToken);
+    
+    // const auth_user = (req.userData = { userId: decodedToken.userId });
     next();
   } catch (err) {
+    console.log(err);
+    
     const error = new Error("Authentication failed!", 401);
     return next(error);
   }

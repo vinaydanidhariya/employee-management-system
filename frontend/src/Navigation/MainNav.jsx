@@ -28,7 +28,7 @@ function MainNav() {
 
   useEffect(() => {
     if (!authUser.isLoggedIn) {
-      navigate("/login");
+      // navigate("/login");
     }
   }, [authUser, navigate]);
 
